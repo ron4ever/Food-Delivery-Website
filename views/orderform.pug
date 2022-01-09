@@ -1,0 +1,28 @@
+html
+    head
+        link(rel='stylesheet', href='http://localhost:3000/generic.css')
+        title order form
+        style(type="text/css").
+            .column {
+                float: left;
+            }
+            .left{
+                width: 10%;
+            }
+            .right {
+                width: 25%;
+            }
+            .middle {
+                width: 65%;
+            }
+    body(onload ="init()")
+        include ./partials/header
+        select(id="restaurant-select")
+        br
+        br
+        div(id = "info")
+        div(id="main")
+            div(class="column left" id="left")
+            div(class="column middle" id="middle")
+            div(class="column right" id="right")
+    script(src="/js/orderform.js")

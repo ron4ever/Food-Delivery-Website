@@ -1,0 +1,11 @@
+div#privacy
+    label Privacy: 
+    if(user.privacy == true)
+        label You are currenly: Private
+        br
+        button#savePublic(type="button") Go Public
+    else
+        label You are currenly Public
+        br
+        button#savePrivate(type="button") Go Private
+script(src="/js/privacy.js")  

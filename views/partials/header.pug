@@ -1,0 +1,20 @@
+link(rel='stylesheet', href='http://localhost:3000/header.css')
+div#header
+	header
+		ul
+			li 
+				a(href="/") Home
+			li 
+				a(href="/users") Users
+			if(session.loggedin)
+				li 
+					a(href="/orders") Order
+				li
+					a(href="/users/" + session.userId) Hi #{session.username} click here for your profile
+				li
+					a(href="/logout") Log Out 
+			else 
+				li 
+					a(href="/register") Register
+				li
+					a(href="/login") Login

@@ -1,0 +1,19 @@
+html
+    head
+        link(rel='stylesheet', href='http://localhost:3000/generic.css')
+        title Order summary
+body
+    include ./partials/header
+    div#main
+    h2 Order was placed by: #{orderInfo.username}    
+    h3 Order Summary: 
+        p Restaurant Name: #{orderInfo.restName}
+        p SubTotal: $#{orderInfo.orderSubTotal.toFixed(2)}
+        p Delivery Fee: $#{orderInfo.orderFee.toFixed(2)}
+        p Tax: $#{orderInfo.orderTax.toFixed(2)}   
+        p Total: $#{orderInfo.orderTotal.toFixed(2)} 
+        h4 Ordered Items:
+        ul
+            for menuItem in orderInfo.orderItems 
+                h4 #{menuItem.quantity} x #{menuItem.name}
+                

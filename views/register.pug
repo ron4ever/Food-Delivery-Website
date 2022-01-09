@@ -1,0 +1,17 @@
+html
+    head
+        link(rel='stylesheet', href='http://localhost:3000/generic.css')
+        title Register Page
+body
+    include ./partials/header
+    if(noInput)
+        p You need to fill in the fields try again
+    if(alert)
+        p Duplicate usernames are not allowed
+    form(action='/register', method='POST')
+        p
+            |username: 
+            input(type='text', name='username')
+            |password: 
+            input(type='password', name='password')
+        input(type='submit', value='Register')

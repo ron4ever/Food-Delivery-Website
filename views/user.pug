@@ -1,0 +1,16 @@
+html
+    head
+        link(rel='stylesheet', href='http://localhost:3000/generic.css')
+        link(rel='stylesheet', href='http://localhost:3000/user.css')
+        title All Pulblic Users
+body
+    include ./partials/header
+    div#main
+        h3 username: #{user.username}    
+        if((session.loggedin == true) && (session.userId.toString() == user._id.toString()))
+            script!= `const object = ${JSON.stringify(user.privacy)};`
+            include ./partials/privacyForm
+        h2 Orders this user has made: 
+            ul
+                for orderId in user.orderHistory
+                    li: a(href="/orders/" + orderId) #{orderId}

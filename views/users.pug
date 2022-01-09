@@ -1,0 +1,11 @@
+html
+    head
+        link(rel='stylesheet', href='http://localhost:3000/users.css')
+        title All Pulblic Users
+body
+    include ./partials/header
+    div#main
+            h1 List of Users
+                ul
+                    for user in list 
+                        li: a(href="/users/" + user._id) #{user.username}
